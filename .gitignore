@@ -1,5 +1,6 @@
 *
 !.gitignore
+!README.md
 !index.php
 !valida.php
 !database.sql
