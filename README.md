@@ -1,35 +1,35 @@
-# Sistema de Tarefas
+# sistema de tarefas
 
-Projeto da ACQA em PHP com MySQL. É um sistema simples de lista de tarefas com cadastro e login.
+trabalho da ACQA. fiz um sistema onde o usuario se cadastra, faz login e gerencia tarefas dele.
 
-## O que tem no sistema
+## funcionalidades
 
-- Cadastro e login de usuário (senha com bcrypt)
-- Dashboard com as tarefas do usuário logado
-- CRUD de tarefas (criar, editar, listar e excluir)
+- cadastro e login (senha salva com password_hash/bcrypt)
+- dashboard mostrando as tarefas do usuario logado
+- criar, editar, listar e excluir tarefas
 
-## Estrutura
+## como esta organizado
 
-```
-controllers/   -> AuthController, DashboardController, TarefaController
-models/        -> Usuario, Tarefa
-dao/           -> UsuarioDAO, TarefaDAO
-views/         -> telas HTML
-config/        -> conexão com o banco
-```
+separei em pastas:
 
-O `index.php` faz o roteamento pelas páginas (`?p=login`, `?p=dashboard`, etc).
+- controllers/ - logica (AuthController, DashboardController, TarefaController)
+- models/ - classes Usuario e Tarefa
+- dao/ - consultas no banco (UsuarioDAO e TarefaDAO)
+- views/ - html das telas
+- config/ - conexao com mysql
 
-## Padrões usados
+o index.php recebe ?p=login, ?p=dashboard, ?p=nova_tarefa etc e chama o controller certo.
 
-- **MVC** – controllers, models e views separados
-- **Singleton** – classe `Conexao` (uma instância só do banco)
-- **DAO** – `UsuarioDAO` e `TarefaDAO` para acesso aos dados
+## padroes
 
-## Como rodar
+usei MVC pra separar as coisas.
 
-1. Importar o `database.sql` no MySQL (ou rodar o `instalar.php` no servidor)
-2. Configurar `config/db.php` com host, usuário, senha e banco
-3. Acessar `index.php` no navegador
+tambem usei Singleton na classe Conexao (so abre uma conexao com o banco) e DAO nas classes UsuarioDAO e TarefaDAO pra nao misturar sql com o resto do codigo.
 
-Requisitos: PHP 7.4+ e MySQL.
+## rodar local
+
+1. criar o banco e importar o database.sql
+2. ajustar config/db.php com usuario e senha do mysql
+3. abrir index.php no navegador
+
+precisa de php e mysql rodando.
