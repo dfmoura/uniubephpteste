@@ -1,0 +1,15 @@
+*
+!.gitignore
+!index.php
+!valida.php
+!database.sql
+!config/
+!config/**
+!models/
+!models/**
+!dao/
+!dao/**
+!controllers/
+!controllers/**
+!views/
+!views/**
